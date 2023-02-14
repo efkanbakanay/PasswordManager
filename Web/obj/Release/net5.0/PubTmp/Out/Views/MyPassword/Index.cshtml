@@ -1,0 +1,170 @@
+﻿@model Web.Models.PasswordViewModel
+@section Headers{
+    <link href="~/assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="~/assets/libs/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet" />
+
+    <style>
+        #showPass{
+            cursor:pointer;
+        }
+    </style>
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Şifrelerim</h4>
+                <h6 class="card-subtitle">Uygulamalarınız için oluşturmuş olduğunuz şifrelerin listesi</h6>
+                <h6 class="card-subtitle float-right">
+                    <a class="btn btn-success" asp-action="Create" role="button"><i class="fa fa-plus"></i> Yeni Ekle</a>
+                </h6>
+                <div class="table-responsive">
+                    @if (TempData["Message"] != null)
+                    {
+                        <div class="alert alert-danger text-center">@TempData["Message"]</div>
+                    }else if (TempData["success"] != null)
+                    {
+                        <div class="alert alert-success text-center">@TempData["Success"]</div>
+                    }
+
+
+                    <table class="table table-striped table-bordered display" id="passwordListTable" style="width:100%">
+                        <!--begin::Table head-->
+                        <thead>
+                            <!--begin::Table row-->
+                            <tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+                                <th class="w-10px pe-2">
+                                   ID
+                                </th>
+                                <th>Kayıt Tanımı</th>
+                                <th>Kategori</th>
+                                <th>Kullanıcı Adı</th>
+                                <th>URL</th>
+                                <th>Kayıt Tarihi</th>
+                                <th>İşlemler</th>
+
+                            </tr>
+                            <!--end::Table row-->
+                        </thead>
+                        <!--end::Table head-->
+                        <!--begin::Table body-->
+                        <tbody class="text-gray-600 fw-bold">
+                        </tbody>
+                        <!--end::Table body-->
+                    </table>
+
+
+
+
+
+
+
+               
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="bilgiGoster" tabindex="-1" role="dialog" aria-labelledby="bilgiGoster">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="bilgiLabel">Parola Bilgileri</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+
+
+                    <div class="form-group row">
+                        <label for="username" class="col-sm-3 control-label">Kayıt Tanımı</label>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text"><i class="ti-user"></i></span></div>
+                            <input type="text" class="form-control" disabled id="KayitTanim">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email4" class="col-sm-3 control-label">Kategori Adı</label>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                            <div class="input-group-prepend"><span class="input-group-text"><i class="ti-user"></i></span></div>
+                            <input type="email" class="form-control" id="KategoriAdi" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="web" class="col-sm-3 control-label">URL</label>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text"><i class="ti-world"></i></span></div>
+                                <input type="text" class="form-control" id="URL" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 control-label">Kullanıcı Adı</label>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text"><i class="ti-lock"></i></span></div>
+                            <input type="text" class="form-control" id="KullaniciAdi" disabled>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 control-label">Parola</label>
+                        <div class="col-sm-9">
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text"><i class="ti-lock"></i></span></div>
+                                <input type="password" class="form-control" id="Parola" disabled>
+                           <div class="input-group-prepend"><span id="showPass" class="input-group-text"><i class="ti-eye"></i></span></div>
+                            </div>
+                        </div>
+                    </div>
+            
+                  
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts{
+
+    <script src="~/assets/extra-libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/assets/components/userpasswordlist.js"></script>
+    <script src="~/assets/libs/sweetalert2/dist/sweetalert2.min.js"></script>
+    
+
+    <script>
+
+     
+             $('#showPass').click(function () {
+
+            var type = document.getElementById('Parola').getAttribute("type");
+
+            if (type === 'password') {
+                $('#Parola').prop('type', 'text');
+            } else {
+                $('#Parola').prop('type', 'password');
+            }
+        });
+
+
+
+
+
+    
+
+    </script>
+
+}

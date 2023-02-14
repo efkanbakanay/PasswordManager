@@ -1,0 +1,156 @@
+﻿@model Entities.Dtos.UserForRegisterDto
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="~/assets/images/favicon.png">
+    <title>Password Manager - Register</title>
+    <!-- Custom CSS -->
+    <link href="~/assets/dist/css/style.min.css" rel="stylesheet">
+    <link href="~/assets/dist/css/jquery.passwordrequirements.css" rel="stylesheet" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+     
+        ul[role=alert] {
+            list-style: none outside none;
+            margin: 0;
+            padding: 0;
+        }
+
+            ul[role=alert] li {
+                float: left;
+                margin: 0 5px;
+                color:red;
+            }
+
+        .field-validation-error {
+            color: white;
+            text-align: center !important;
+            background: #f36868;
+            padding: 5px;
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="preloader">
+            <div class="lds-ripple">
+                <div class="lds-pos"></div>
+                <div class="lds-pos"></div>
+            </div>
+        </div>
+        <div class="auth-wrapper d-flex no-block justify-content-center align-items-center" style="background:url(/assets/images/big/auth-bg.jpg) no-repeat center center;">
+            <div class="auth-box">
+                <div>
+                    <div class="logo">
+                        <span class="db"><img src="/assets/images/logo-icon.png" alt="logo" /></span>
+                        <h5 class="font-medium m-b-20">Parola Yönetimi - Kaydol</h5>
+                    </div>
+                    <!-- Form -->
+                    <div class="row">
+                        <div class="col-12">
+                            <form id="registerForm" class="form-horizontal m-t-20" asp-action="Register" method="post" novalidate>
+
+                                @if (TempData["Message"] != null)
+                                {
+                                    <div class="alert alert-danger text-center">@TempData["Message"]</div>
+                                }
+                                else if (TempData["success"] != null)
+                                {
+                                    <div class="alert alert-success text-center">@TempData["Success"]</div>
+                                }
+                                <div class="form-group row ">
+                                    <div class="col-12 controls">
+                                        <input class="form-control form-control-lg" type="text" asp-for="@Model.FullName" placeholder="Ad Soyad" required data-validation-required-message="Bu alan zorunludur">
+                                    </div>
+                                    <span asp-validation-for="@Model.FullName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-12 controls">
+                                        <input class="form-control form-control-lg" type="email" asp-for="@Model.Email" placeholder="Email" required data-validation-required-message="Bu alan zorunludur">
+                                    </div>
+                                    <span asp-validation-for="@Model.Email" class="text-danger"></span>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-12 controls">
+                                        <input class="form-control form-control-lg pr-password" type="password" asp-for="@Model.Password" name="password" placeholder="Parola" required data-validation-required-message="Bu alan zorunludur">
+                                    </div>
+                                    <span asp-validation-for="@Model.Password" class="text-danger"></span>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-12 controls">
+                                        <input class="form-control form-control-lg" type="password" placeholder="Parola Tekrar" name="Passwordagain"
+                                               data-validation-matches-match="password" >
+  
+                                    </div>
+                                </div>
+                                <div class="form-group text-center ">
+                                    <div class="col-xs-12 p-b-20 ">
+                                        <button class="btn btn-block btn-lg btn-info " type="submit">KAYDOL</button>
+                                    </div>
+                                </div>
+                                <div class="form-group m-b-0 m-t-10 ">
+                                    <div class="col-sm-12 text-center ">
+                                        Zaten hesabınız var mı?    <a asp-action="Login" class="text-info m-l-5 "><b>Giriş Yap</b></a>
+                                    </div>
+                                </div>
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/assets/libs/jquery/dist/jquery.min.js "></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="~/assets/libs/popper.js/dist/umd/popper.min.js "></script>
+    <script src="~/assets/libs/bootstrap/dist/js/bootstrap.min.js "></script>
+    <script src="~/assets/dist/js/jquery.passwordrequirements.js"></script>
+    <script src="~/assets/extra-libs/jqbootstrapvalidation/validation.js"></script>
+
+    <script>
+           ! function(window, document, $) {
+        "use strict";
+        $("input,select,textarea").not("[type=submit]").jqBootstrapValidation();
+    }(window, document, jQuery);
+
+
+        $(document).ready(function () {
+            $(".pr-password").passwordRequirements({
+
+            });
+        });
+
+
+        $('[data-toggle="tooltip "]').tooltip();
+        $(".preloader ").fadeOut();
+
+   
+      
+    </script>
+
+
+</body>
+
+</html>

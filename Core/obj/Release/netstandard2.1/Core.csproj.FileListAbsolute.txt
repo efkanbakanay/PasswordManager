@@ -1,0 +1,10 @@
+C:\Users\Loop\Desktop\PasswordManager\Core\bin\Release\netstandard2.1\Core.deps.json
+C:\Users\Loop\Desktop\PasswordManager\Core\bin\Release\netstandard2.1\Core.dll
+C:\Users\Loop\Desktop\PasswordManager\Core\bin\Release\netstandard2.1\Core.pdb
+C:\Users\Loop\Desktop\PasswordManager\Core\obj\Release\netstandard2.1\Core.csproj.AssemblyReference.cache
+C:\Users\Loop\Desktop\PasswordManager\Core\obj\Release\netstandard2.1\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Loop\Desktop\PasswordManager\Core\obj\Release\netstandard2.1\Core.AssemblyInfoInputs.cache
+C:\Users\Loop\Desktop\PasswordManager\Core\obj\Release\netstandard2.1\Core.AssemblyInfo.cs
+C:\Users\Loop\Desktop\PasswordManager\Core\obj\Release\netstandard2.1\Core.csproj.CoreCompileInputs.cache
+C:\Users\Loop\Desktop\PasswordManager\Core\obj\Release\netstandard2.1\Core.dll
+C:\Users\Loop\Desktop\PasswordManager\Core\obj\Release\netstandard2.1\Core.pdb

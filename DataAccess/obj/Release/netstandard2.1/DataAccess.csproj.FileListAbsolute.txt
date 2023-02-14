@@ -1,0 +1,15 @@
+C:\Users\Loop\Desktop\PasswordManager\DataAccess\bin\Release\netstandard2.1\DataAccess.deps.json
+C:\Users\Loop\Desktop\PasswordManager\DataAccess\bin\Release\netstandard2.1\DataAccess.dll
+C:\Users\Loop\Desktop\PasswordManager\DataAccess\bin\Release\netstandard2.1\DataAccess.pdb
+C:\Users\Loop\Desktop\PasswordManager\DataAccess\bin\Release\netstandard2.1\Core.dll
+C:\Users\Loop\Desktop\PasswordManager\DataAccess\bin\Release\netstandard2.1\Entities.dll
+C:\Users\Loop\Desktop\PasswordManager\DataAccess\bin\Release\netstandard2.1\Core.pdb
+C:\Users\Loop\Desktop\PasswordManager\DataAccess\bin\Release\netstandard2.1\Entities.pdb
+C:\Users\Loop\Desktop\PasswordManager\DataAccess\obj\Release\netstandard2.1\DataAccess.csproj.AssemblyReference.cache
+C:\Users\Loop\Desktop\PasswordManager\DataAccess\obj\Release\netstandard2.1\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Loop\Desktop\PasswordManager\DataAccess\obj\Release\netstandard2.1\DataAccess.AssemblyInfoInputs.cache
+C:\Users\Loop\Desktop\PasswordManager\DataAccess\obj\Release\netstandard2.1\DataAccess.AssemblyInfo.cs
+C:\Users\Loop\Desktop\PasswordManager\DataAccess\obj\Release\netstandard2.1\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Loop\Desktop\PasswordManager\DataAccess\obj\Release\netstandard2.1\DataAccess.csproj.CopyComplete
+C:\Users\Loop\Desktop\PasswordManager\DataAccess\obj\Release\netstandard2.1\DataAccess.dll
+C:\Users\Loop\Desktop\PasswordManager\DataAccess\obj\Release\netstandard2.1\DataAccess.pdb
